@@ -24,18 +24,21 @@ public class implementation {
         Node e=new Node(1);
         Node f=new Node(6);
         Node g=new Node(9);
+        Node i=new Node(5);
         a.left=b;
         a.right=c;
         b.left=d;
         b.right=e;
         c.left=f;
         c.right=g;
+//        g.left=i;
         display(a);
         System.out.println();
         System.out.println(size(a));
         System.out.println(sum(a));
         System.out.println(product(a));
         System.out.println(maximum(a));
+        System.out.println(level(a));
     }
     public static void display(Node root){
         if(root==null)return ;
@@ -62,6 +65,10 @@ public class implementation {
     public static int maximum(Node root){
         if(root==null)return -1;
         return Math.max(root.val,Math.max(maximum(root.right),maximum(root.left)));
+    }
+    public static int level(Node root){
+        if(root==null)return 0;
+        return 1+Math.max(level(root.left),level(root.right));
     }
 }
 
