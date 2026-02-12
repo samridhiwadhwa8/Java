@@ -1,5 +1,5 @@
 package binarytrees;
-
+import java.util.*;
 
 public class traversals {
     public static void main(String[] args) {
@@ -22,6 +22,8 @@ public class traversals {
         postorder(a);
         System.out.println();
         preorder(a);
+        System.out.println();
+        levelorder(a);
     }
     public static void inorder(Node a){
         if(a==null)return ;
@@ -40,5 +42,17 @@ public class traversals {
         System.out.print(a.val+" ");
         preorder(a.left);
         preorder(a.right);
+    }
+    public static void levelorder(Node root){
+        Queue<Node> q=new LinkedList<>();
+        q.add(root);
+        while(q.size()>0){
+            Node front=q.remove();
+            System.out.print(front.val+" ");
+            if(front.left!=null)q.add(front.left);
+            if(front.right!=null)q.add(front.right);
+        }
+        System.out.println();
+
     }
 }
