@@ -1,6 +1,13 @@
 package binarytrees;
 import java.util.*;
-
+class Pair{
+    Node node;
+    int level;
+    Pair(Node node,int level){
+        this.node=node;
+        this.level=level;
+    }
+}
 public class traversals {
     public static void main(String[] args) {
         Node a = new Node(3);
@@ -24,7 +31,28 @@ public class traversals {
         preorder(a);
         System.out.println();
         levelorder(a);
+        System.out.println();
+        levelorderwise(a);
     }
+
+    private static void levelorderwise(Node a) {
+        Queue<Pair> q=new LinkedList<>();
+        int cl=0;
+        q.add(new Pair(a,0));
+        while(q.size()>0){
+            Pair front=q.remove();
+            if(cl!=front.level){
+                cl++;
+                System.out.println();
+            }
+            System.out.print(front.node.val+" ");
+            if(front.node.left!=null)q.add(new Pair(front.node.left,front.level+1));
+            if(front.node.right!=null)q.add(new Pair(front.node.right,front.level+1));
+        }
+
+
+    }
+
     public static void inorder(Node a){
         if(a==null)return ;
         inorder(a.left);
