@@ -9,7 +9,7 @@ public class subsequences {
     }
     public static void s(List<List<Integer>> arr, List<Integer> ar, int k, int sum, int i,int a[]){
         if(i==a.length){
-            if(sum==k){
+            if(sum==k){ // if(sum<=k) arr.add(ar)
                 arr.add(new ArrayList<>(ar));
             }
             return ;

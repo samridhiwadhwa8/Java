@@ -15,7 +15,7 @@ public class subseq {
         if(i==arr.length){
             if(sum==k && flag==true){
                 r.add(new ArrayList<>(res));
-                flag=false;
+//                flag=false;
             }
             return ;
         }
