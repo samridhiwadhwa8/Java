@@ -1,5 +1,5 @@
 package recursion;
-
+//print subsequences with sum ==k
 import java.util.*;
 public class subsequences {
     public static List<List<Integer>> sub(List<List<Integer>> arr,int k,int a[]){
