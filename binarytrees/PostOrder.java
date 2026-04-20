@@ -12,7 +12,7 @@ class Solution {
         res.add(root.data);
     }
 }
-//Iterative Approach
+//Iterative Approach - 2 Stacks
 class Solution {
     List<Integer> res=new ArrayList<>();
     public List<Integer> postorder(TreeNode root) {
@@ -31,4 +31,29 @@ class Solution {
     }
     return res;
 }
+}
+
+//Iterative Approach - 1 Stack
+class Solution {
+    public List<Integer> postorderTraversal(TreeNode root) {
+        List<Integer> res=new ArrayList<>();
+        Stack<TreeNode> st=new Stack<>();
+        TreeNode curr=root;
+        TreeNode lv=null;
+        while(!st.isEmpty() || curr!=null){
+            if(curr!=null){
+                st.push(curr);
+                curr=curr.left;
+            }else{
+                TreeNode s=st.peek();
+                if(s.right!=null && s.right!=lv){
+                    curr=s.right;
+                }else{
+                    res.add(s.val);
+                    lv=st.pop();
+                }
+            }
+        }
+        return res;
+    }
 }
