@@ -23,3 +23,36 @@ class Solution {
         }
     }
 }
+// 2nd
+// // User function Template for Java
+
+class Solution {
+    public void rotate(int[] arr) {
+       int[] a=new int[arr.length];
+       for(int i=0;i<arr.length;i++){
+           a[(i+1)%arr.length]=arr[i];
+       }
+       int s=0;
+       for(int i:a){
+           arr[s++]=i;
+       }
+    }
+}
+//left rotate
+class Solution {
+    static void rotateArr(int arr[], int d) {
+        d=d%arr.length;
+        reverse(arr,0,d-1);
+        reverse(arr,d,arr.length-1);
+        reverse(arr,0,arr.length-1);
+    }
+    static void reverse(int[] arr,int i,int j){
+        while(i<j){
+            int temp=arr[i];
+            arr[i]=arr[j];
+            arr[j]=temp;
+            i++;
+            j--;
+        }
+    }
+}
