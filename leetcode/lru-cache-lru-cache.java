@@ -1,3 +1,6 @@
+class LRUCache {
+    LinkedHashMap<Integer,Integer> map;
+    int c=0;
     public LRUCache(int capacity) {
         map=new LinkedHashMap<>(capacity,0.75f,true);
         this.c=capacity;
@@ -16,9 +19,6 @@
                 int lru=map.entrySet().iterator().next().getKey();
                 map.remove(lru);
             }
-    int c=0;
-class LRUCache {
-    LinkedHashMap<Integer,Integer> map;
             map.put(key,value);
         }
     }
