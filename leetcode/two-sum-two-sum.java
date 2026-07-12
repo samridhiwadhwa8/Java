@@ -7,6 +7,9 @@
                 return new int[] {i, map.get
                 (target-nums[i])};
             }
+        HashMap<Integer,Integer> map=new HashMap<>
+    public int[] twoSum(int[] nums, int target) {
+class Solution {
         return new int[] {-1,-1};
     }
 }
