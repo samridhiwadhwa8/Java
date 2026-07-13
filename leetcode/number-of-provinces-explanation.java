@@ -1,3 +1,4 @@
+class Solution {
     public int findCircleNum(int[][] isConnected) {
         int n=isConnected.length;
         int p=0;
@@ -26,4 +27,3 @@
             }
         }
     }
-class Solution {
