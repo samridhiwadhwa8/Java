@@ -1,11 +1,11 @@
-            int j=nums.length-1;
-            int i=k+1;
-        for(int k=0;k<nums.length;k++){
-        int cs=Integer.MAX_VALUE;
-    public int threeSumClosest(int[] nums, int target) {
 class Solution {
-        int l=0;
+    public int threeSumClosest(int[] nums, int target) {
         Arrays.sort(nums);
+        int cs=Integer.MAX_VALUE;
+        int l=0;
+        for(int k=0;k<nums.length;k++){
+            int i=k+1;
+            int j=nums.length-1;
             while(i<j){
                 int sum=nums[i]+nums[j]+nums[k];
                 if(Math.abs(sum-target)<cs){
