@@ -14,4 +14,27 @@ class Solution {
         }
         return res;
     }
+  //without sorting
+   for(String s:strs){
+            int[] freq=new int[26];
+            for(char c:s.toCharArray()){
+                freq[c-'a']++;
+            }
+            StringBuilder key=new StringBuilder();
+        for(int i=0;i<26;i++){
+            while(freq[i]>0){
+                key.append((char)(i+'a'));
+                freq[i]--;
+            }
+        }
+        map.putIfAbsent(key.toString(),new ArrayList<>());
+        map.get(key.toString()).add(s);
+        }
+        List<List<String>> res=new ArrayList<>();
+        for(List<String> k:map.values()){
+            res.add(k);
+        }
+        return res;
+    }
+}
 }
