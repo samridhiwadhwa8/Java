@@ -1,3 +1,6 @@
+ * class ListNode {
+ *     int val;
+ *     ListNode next;
  *     ListNode(int x) {
  *         val = x;
  *         next = null;
@@ -5,7 +8,6 @@
  * }
  */
 public class Solution {
- *     ListNode next;
     public ListNode detectCycle(ListNode head) {
         ListNode slow=head;
         ListNode fast=head;
@@ -23,5 +25,3 @@ public class Solution {
         return temp;
     }
 }
- *     int val;
- * class ListNode {
